@@ -6,7 +6,9 @@
 # Fim do projeto: 
 #==================================================
 
-from core.funcoes import adicionarRegistro, lerRegistros, caminhoReceita, caminhoDespesa, caminhoPatrimonio
+from core.funcoes import adicionar_registro, ler_registros, caminho_receita, caminho_despesa, caminho_patrimonio
+from core.registrar_receita import registrar_receita_interativa
+from core.registrar_despesas import registrar_despesa_interativa
 import sys
 
 def exibirMenu():
@@ -24,29 +26,9 @@ def main():
         opcao = input("Escolha uma opção (1-6): ")
 
         if opcao == "1":
-            print("\n===REGISTRAR RECEITA===")
-            mes = input("Mês/Ano (Ex: Out/2025): ")
-            descricao = input("descição da receita: ")
-            valor = input("Valor (R$): ")
-
-            #Converte valor para float
-            try:
-                valor = float(valor.replace(',', '.'))
-            except ValueError:
-                print("Valor inválido!")
-                continue
-
-            dados ={
-                "mes": mes,
-                "descricao": descricao,
-                "valor": valor
-            }
-
-            adicionarRegistro(caminhoReceita, dados, cabecalho=["mes", "descricao", "valor"])
-            print("Receita registrada com sucesso!")
-            
+           registrar_receita_interativa()            
         elif opcao == "2":
-            print("Função: registrar Despesa (em breve)")
+            registrar_despesa_interativa()
         elif opcao == "3":
             print("Função: registrar Patrimônio (em breve)")
         elif opcao == "4":

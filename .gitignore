@@ -1,0 +1,24 @@
+#Python
+___pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#VSCode
+.vscode/
+
+#Dados Financeiros Sensíveis
+data/*.csv
+
+#Arquivos temporários do sistema
+*.log
+*.temp
+*.swp
+
+#OS específicos
+.DS_Store
+Thumbs.db
+
+#Configurações de ambiente virtual (se existir)
+env/
+venv/

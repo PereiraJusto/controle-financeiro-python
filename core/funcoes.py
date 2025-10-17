@@ -2,29 +2,29 @@ import csv
 import os
 
 #Caminhos para os arquivos CSV
-caminhoReceita = os.path.join("data", "receitas.csv")
-caminhoDespesa = os.path.join("data", "despesas.csv")
-caminhoPatrimonio = os.path.join("data", "patrimonios.csv")
+caminho_receita = os.path.join("data", "receitas.csv")
+caminho_despesa = os.path.join("data", "despesas.csv")
+caminho_patrimonio = os.path.join("data", "patrimonios.csv")
 
 #Função genérica para adicionar registro em CSV
-def adicionarRegistro(caminhoArquivo, dados, cabecalho):
-    arquivoExiste = os.path.isfile(caminhoArquivo)
+def adicionar_registro(caminho_arquivo, dados, cabecalho):
+    arquivo_existe = os.path.isfile(caminho_arquivo)
 
-    with open(caminhoArquivo, mode='a', newline='', encoding='utf-8') as file:
+    with open(caminho_arquivo, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=cabecalho)
 
         #Escreve o cabeçalho se o arquivo não existir
-        if not arquivoExiste:
+        if not arquivo_existe:
             write.writeheader()
 
         #Escreve os dados
         writer.writerow(dados)
 
 #função para ler todos os registros de um CSV
-def lerRegistros(caminhoArquivo):
-    if not os.path.isfile(caminhoArquivo):
+def ler_registros(caminho_arquivo):
+    if not os.path.isfile(caminho_arquivo):
         return []
     
-    with open(caminhoArquivo, mode='r', newline='', encoding='utf-8') as file:
+    with open(caminho_arquivo, mode='r', newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         return list(reader)
