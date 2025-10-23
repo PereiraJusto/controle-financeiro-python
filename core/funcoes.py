@@ -15,7 +15,7 @@ def adicionar_registro(caminho_arquivo, dados, cabecalho):
 
         #Escreve o cabeçalho se o arquivo não existir
         if not arquivo_existe:
-            write.writeheader()
+            writer.writeheader()
 
         #Escreve os dados
         writer.writerow(dados)
