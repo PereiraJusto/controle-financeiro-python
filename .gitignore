@@ -1,3 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+
+# VSCode
+.vscode/
+
+# Django
+db.sqlite3
+*.sqlite3
+
+# Local data (CSV etc.)
+data/
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+.idea/
 #Python
 ___pycache__/
 *.pyc
